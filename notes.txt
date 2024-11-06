@@ -1,0 +1,8 @@
+Reference Link: https://angular.dev/tutorials/first-app/02-HomeComponent
+
+--create new component
+$ ng generate component home --standalone --inline-template
+
+--create new component
+$ ng generate component HousingLocation --standalone --inline-template
+
