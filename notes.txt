@@ -1,8 +1,13 @@
 Reference Link: https://angular.dev/tutorials/first-app/02-HomeComponent
 
+--start app
+$ yarn start
+
 --create new component
 $ ng generate component home --standalone --inline-template
 
 --create new component
 $ ng generate component HousingLocation --standalone --inline-template
 
+--create a new interface to represent data
+$ ng generate interface housingLocation
