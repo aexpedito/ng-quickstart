@@ -11,3 +11,9 @@ $ ng generate component HousingLocation --standalone --inline-template
 
 --create a new interface to represent data
 $ ng generate interface housingLocation
+
+--create details
+$ ng generate component details --standalone --inline-template
+
+--create service
+$ ng generate service housing
