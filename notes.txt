@@ -17,3 +17,7 @@ $ ng generate component details --standalone --inline-template
 
 --create service
 $ ng generate service housing
+
+--add json-server
+$ npm install -g json-server
+$ json-server --watch db.json
