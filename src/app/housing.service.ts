@@ -20,7 +20,7 @@ export class HousingService {
     return await data.json() ?? {};
   }
 
-  submitApplication(firstName: string, lastName: string, email: string) {
-    console.log(firstName, lastName, email) //TODO print doesnt print email
+  submitApplication(firstName: string, lastName: string, email: string, start: string, end: string) {
+    console.log(firstName, lastName, email, start, end)
   }
 }

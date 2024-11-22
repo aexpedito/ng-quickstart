@@ -21,3 +21,14 @@ button.primary {
   color: white;
   border-radius: 8px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.enabled .vlibras{
+  left: initial;
+  right: 0px;
+  top: 60%;
+  bottom: initial;
+  transform: translateY(calc(-50% - 10px));
+}

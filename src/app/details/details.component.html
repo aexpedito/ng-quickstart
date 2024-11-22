@@ -28,7 +28,21 @@
 
         <label for="email">Email</label>
         <input type="email" id="email" formControlName="email">
-        <button type="submit" class="primary">Submit</button>
+      
+        <label for="dateRange">Date range</label>
+        <mat-form-field>
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate formControlName="start" placeholder="Start">
+            <input matEndDate formControlName="end" placeholder="End">
+          </mat-date-range-input>
+          <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+        
+        <label for="submit"></label>
+        <button type="submit" class="primary" [disabled]="!applyForm.valid">Submit</button>
        </form>
     </section>
 </article>
