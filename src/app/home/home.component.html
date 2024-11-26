@@ -5,5 +5,14 @@
   </form>
 </section>
 <section class="results">
+  @defer (on hover; on interaction(showComments)){
   <app-housing-location *ngFor="let housingLocation of filteredLocationList" [housingLocation]="housingLocation"></app-housing-location>
+  }@placeholder (minimum 2s) {
+    <p>Placeholder for Houses</p>
+  }@loading (minimum 1s; after 500ms) {
+    <p>Loading Houses...</p>
+  }@error {
+    <p>Failed to load Houses</p>
+  }
 </section>
+<button type="button" #showComments>Load houses</button>

@@ -28,6 +28,8 @@ $ yarn add @angular/material@18
 $ ng add @angular/material
 
 --improvements ideas
-//TODO improve form handling, add datepicker to form in details
+//TODO improve form handling, add datepicker to form in details -> DONE
+//TODO 404 page: https://angular.dev/guide/routing/common-router-tasks -> DONE
+//TODO fix image load on details
 //TODO  dark theme to website: https://www.youtube.com/watch?v=sM3ATKt8568
 

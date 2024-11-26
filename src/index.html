@@ -10,24 +10,29 @@
   <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=673246c4fb20e60013270b7c&product=sticky-share-buttons&source=platform" async="async"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    /* Posiciona o VLibras top: 60% */
+  #vlibras {
+    top: 60% !important;
+  }
+  </style>
 </head>
 <body class="mat-typography">
   <app-root></app-root>
   <div class="sharethis-sticky-share-buttons"></div>
-  <div class="vlibras">
   <div vw class="enabled" id="vlibras">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
       <div class="vw-plugin-top-wrapper"></div>
     </div>
   </div>
-</div>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
   <script>
     window.onload = function() {
       vlibras = new window.VLibras.Widget('https://vlibras.gov.br/app');
       console.log("vlibras");
       console.log(vlibras);
+      //document.getElementById("vlibras").style="left: initial; right: 0px; top: initial; bottom: 0px; transform: initial;"
     };
   </script>
 </body>
