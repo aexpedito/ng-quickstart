@@ -7,9 +7,12 @@ import {AppComponent} from './app/app.component';
 import { provideRouter, withDebugTracing } from '@angular/router';
 import routeConfig from './app/routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideNgxMask } from 'ngx-mask';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routeConfig, withDebugTracing()), provideAnimationsAsync()
+    provideRouter(routeConfig, withDebugTracing()), 
+    provideAnimationsAsync(),
+    provideNgxMask(),
   ]}).catch((err) => console.error(err),
 );

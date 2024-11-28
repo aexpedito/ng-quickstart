@@ -9,10 +9,12 @@ import { DatepickerComponent } from '../datepicker/datepicker.component';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, DatepickerComponent, MatDatepickerModule, MatFormFieldModule],
+  imports: [CommonModule, ReactiveFormsModule, DatepickerComponent, MatDatepickerModule, MatFormFieldModule, NgxMaskDirective,NgxMaskPipe],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -29,6 +31,8 @@ export class DetailsComponent {
     email: new FormControl('afonso@email.com', [Validators.required, Validators.email]),
     start: new FormControl('', Validators.required),
     end: new FormControl('', Validators.required),
+    cep: new FormControl('', Validators.required),
+    logradouro: new FormControl('', Validators.required),
   });
 
   constructor(){
@@ -46,6 +50,12 @@ export class DetailsComponent {
       this.applyForm.value.email ?? '',
       this.applyForm.value.start ?? '',
       this.applyForm.value.end ?? '',
+      this.applyForm.value.cep ?? '',
     );
   }
+
+  getCepDetails(){
+    console.log('getCepDetails() call '+ this.applyForm.value.cep);
+  }
+
 }

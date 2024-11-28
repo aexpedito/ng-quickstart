@@ -40,6 +40,12 @@
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-date-range-picker #picker></mat-date-range-picker>
         </mat-form-field>
+
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" [showMaskTyped]="true" formControlName="cep" mask="00000-000" (keyup)="getCepDetails()">
+
+        <label for="logradouro">Logradouro</label>
+        <input type="text" id="logradouro" formControlName="logradouro">
         
         <label for="submit"></label>
         <button type="submit" class="primary" [disabled]="!applyForm.valid">Submit</button>
