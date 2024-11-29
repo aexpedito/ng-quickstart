@@ -44,8 +44,17 @@
         <label for="cep">CEP</label>
         <input type="text" id="cep" [showMaskTyped]="true" formControlName="cep" mask="00000-000" (keyup)="getCepDetails()">
 
-        <label for="logradouro">Logradouro</label>
-        <input type="text" id="logradouro" formControlName="logradouro">
+        <label for="logradouro">Rua</label>
+        <input type="text" id="logradouro" formControlName="logradouro" [(ngModel)]="logradouro">
+
+        <label for="bairro">Bairro</label>
+        <input type="text" id="bairro" formControlName="bairro" [(ngModel)]="bairro" >
+
+        <label for="localidade">Cidade</label>
+        <input type="text" id="localidade" formControlName="localidade" [(ngModel)]="localidade" >
+
+        <label for="uf">Estado</label>
+        <input type="text" id="uf" formControlName="uf" [(ngModel)]="uf" >
         
         <label for="submit"></label>
         <button type="submit" class="primary" [disabled]="!applyForm.valid">Submit</button>
