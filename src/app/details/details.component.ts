@@ -23,6 +23,7 @@ import { CepService } from '../cep.service';
 })
 
 export class DetailsComponent {
+  cpf: string = '';
   logradouro: string = '';
   bairro: string = '';
   localidade: string = '';
@@ -42,6 +43,7 @@ export class DetailsComponent {
     bairro: new FormControl('', Validators.required),
     localidade: new FormControl('', Validators.required),
     uf: new FormControl('', Validators.required),
+    cpf: new FormControl('', Validators.required),
   });
 
   constructor(){
@@ -84,6 +86,45 @@ export class DetailsComponent {
         }
       });
     }
+  }
+
+  cpfValidator(){
+    if (this.applyForm.value.cpf?.length == 11){
+      if (/^(\d)\1{10}$/.test(this.applyForm.value.cpf)){
+        console.log('CPF invalido')
+      } 
+      else {
+        this.cpf = this.applyForm.value.cpf;
+        //calcula e valida o primeiro digito
+        // Calcula e valida o primeiro dígito verificador
+        let soma = 0;
+        for (let i = 0; i < 9; i++) {
+          soma += parseInt(this.cpf.charAt(i)) * (10 - i);
+        }
+        let resto = soma % 11;
+        let digito1 = (resto < 2) ? 0 : 11 - resto;
+        if (parseInt(this.cpf.charAt(9)) !== digito1) {
+          console.log('CPF invalido')
+          return false;
+        }
+
+        // Calcula e valida o segundo dígito verificador
+        soma = 0;
+        for (let i = 0; i < 10; i++) {
+          soma += parseInt(this.cpf.charAt(i)) * (11 - i);
+        }
+        resto = soma % 11;
+        let digito2 = (resto < 2) ? 0 : 11 - resto;
+        if (parseInt(this.cpf.charAt(10)) !== digito2) {
+          console.log('CPF invalido')
+          return false;
+        }
+         // Se passou todas as verificações, o CPF é válido
+        console.log('CPF valido')
+        return true;
+      }
+    }
+    return false;
   }
 
 }
